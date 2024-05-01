@@ -1,11 +1,14 @@
 .card{
-    background:#a6f3fb;
-
+    position:absolute;
+    background:#68e8f8 !important;
+    margin-top:5px;
+    margin-left:5px;
 }
 
 .card-title{
-    color:#083444;
-
-
+    color:#083444 !important;
 }
 
+.card-text{
+    color:#174f62  !important
+}
