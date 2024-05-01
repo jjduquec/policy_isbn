@@ -18,6 +18,7 @@ function App() {
       .then((response) => {
         var formated_data=[];
         const data = response.data.policies 
+
         data.map((element)=>{
           formated_data.push(
               {customerId:element.customerId,
@@ -31,6 +32,7 @@ function App() {
         setList(formated_data);
       })
       .catch((error) => {
+        
         console.log(error);
       },[setList]);
 
@@ -39,12 +41,13 @@ function App() {
 
  
   return ( 
+    
     <div class="row"> 
      <div class="col col-6 col-md-4" >
         
-             
+              {console.log(policies_list.length)}
               {policies_list.map((temp_policy)=>(
-                  <Policy data_policy={temp_policy}/>
+                  <Policy key={temp_policy.customerId} data_policy={temp_policy}/>
 
                   ))  
         
