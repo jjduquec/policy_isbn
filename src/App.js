@@ -22,6 +22,7 @@ function App() {
         data.map((element)=>{
           formated_data.push(
               {customerId:element.customerId,
+                policyId:element.policyId,
                   Status:element.status,
                   StartDate:element.product.periodCoverage.startDate
                   ,EndDate:element.product.periodCoverage.endDate}
@@ -45,7 +46,7 @@ function App() {
     <div class="row"> 
      <div class="col col-6 col-md-4" >
         
-              {console.log(policies_list.length)}
+              
               {policies_list.map((temp_policy)=>(
                   <Policy key={temp_policy.customerId} data_policy={temp_policy}/>
 
@@ -55,7 +56,7 @@ function App() {
               }
           
       </div>
-    <div class="col col-sm-6 col-md-8">
+    <div class="col col-lg-">
       Second Column
     </div>
   </div>
