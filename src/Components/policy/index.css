@@ -1,14 +1,16 @@
 .card{
     position:absolute;
-    background:#68e8f8 !important;
+    border:2px solid #68e8f8 !important;
     margin-top:5px;
     margin-left:5px;
 }
 
 .card-title{
     color:#083444 !important;
+    
 }
 
 .card-text{
-    color:#174f62  !important
+    color:#174f62  !important;
+    font-weight: bold !important;
 }
