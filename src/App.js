@@ -11,6 +11,15 @@ import axios from 'axios';
 function App() {
 
   const[policies_list,setList]=useState([])
+  
+
+  function PolicyClicked(policyId){
+
+
+    console.log(policyId)
+  }
+
+
 /*
   useEffect(()=>{
     axios({
@@ -43,10 +52,7 @@ function App() {
 
   /*delete this before update main */  
 
-  function handleClick(){
-
-    console.log("testing click handler")
-  }
+ 
 
   let policies=[
     {customerId:'510-558-2282',policyId:'da330621-7678-4cae-bc07-f3fc7128d380',Status:'Cancelled',StartDate:'25/01/24',EndDate:'25/01/25'},
@@ -60,11 +66,12 @@ function App() {
   return ( 
     
     <div class="row justify-content-start"> 
+    
       <div class="col col-6 col-md-4" >
           
                 
                 {policies.map((temp_policy)=>(
-                    <Policy onClick={handleClick} key={temp_policy.customerId} data_policy={temp_policy}/>
+                    <Policy key={temp_policy.customerId} data_policy={temp_policy} PolicyClicked={PolicyClicked} />
 
                     ))  
           
