@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import './App.css';
 import './bootstrap/css/bootstrap.css';
 import Policy from './Components/policy/index.js';
+import Details from './Components/policy_details/details.js'
 import axios from 'axios';
 
 
@@ -41,11 +42,17 @@ function App() {
   */
 
   /*delete this before update main */  
+
+  function handleClick(){
+
+    console.log("testing click handler")
+  }
+
   let policies=[
-    {customerId:'510-558-2282',Status:'Cancelled',StartDate:'25/01/24',EndDate:'25/01/25'},
-    {customerId:'510-558-2283',Status:'Active',StartDate:'25/01/24',EndDate:'25/01/25'},
-    {customerId:'510-558-2284',Status:'Active',StartDate:'25/01/24',EndDate:'25/01/25'},
-    {customerId:'510-558-2285',Status:'Active',StartDate:'25/01/24',EndDate:'25/01/25'}
+    {customerId:'510-558-2282',policyId:'da330621-7678-4cae-bc07-f3fc7128d380',Status:'Cancelled',StartDate:'25/01/24',EndDate:'25/01/25'},
+    {customerId:'510-558-2283',policyId:'da330621-7678-4cae-bc07-f3fc7128d380',Status:'Active',StartDate:'25/01/24',EndDate:'25/01/25'},
+    {customerId:'510-558-2284',policyId:'da330621-7678-4cae-bc07-f3fc7128d380',Status:'Active',StartDate:'25/01/24',EndDate:'25/01/25'},
+    {customerId:'510-558-2285',policyId:'da330621-7678-4cae-bc07-f3fc7128d380',Status:'Active',StartDate:'25/01/24',EndDate:'25/01/25'}
   ]
 
 
@@ -57,7 +64,7 @@ function App() {
           
                 
                 {policies.map((temp_policy)=>(
-                    <Policy key={temp_policy.customerId} data_policy={temp_policy}/>
+                    <Policy onClick={handleClick} key={temp_policy.customerId} data_policy={temp_policy}/>
 
                     ))  
           
@@ -75,15 +82,7 @@ function App() {
                 <th scope="col">Status</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                  <td>8f2e05ef-0e61-4f47-8b0b-157fea83e7d8</td>
-                  <td>ISS</td>
-                  <td>2024-04-26</td>
-                  <td>ACTIVE</td>
-              </tr>
-
-            </tbody>
+            <Details/>
           </table>
         </div>
       
