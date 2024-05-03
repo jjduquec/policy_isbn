@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import './App.css';
 import './bootstrap/css/bootstrap.css';
-import Policy from './Components/policy/index.js';
-import Details from './Components/policy_details/details.js'
+import Policy from './Components/policy/policy.js';
+//import Details from './Components/policy_details/policy_details.js'
+import Transactions from './Components/transaction_list/transactions.js';
 import axios from 'axios';
 
 
@@ -11,12 +12,11 @@ import axios from 'axios';
 function App() {
 
   const[policies_list,setList]=useState([])
+  const[selectedPolicy,setSelected]=useState('')
   
 
   function PolicyClicked(policyId){
-
-
-    console.log(policyId)
+    setSelected(policyId)
   }
 
 
@@ -56,9 +56,9 @@ function App() {
 
   let policies=[
     {customerId:'510-558-2282',policyId:'da330621-7678-4cae-bc07-f3fc7128d380',Status:'Cancelled',StartDate:'25/01/24',EndDate:'25/01/25'},
-    {customerId:'510-558-2283',policyId:'da330621-7678-4cae-bc07-f3fc7128d380',Status:'Active',StartDate:'25/01/24',EndDate:'25/01/25'},
-    {customerId:'510-558-2284',policyId:'da330621-7678-4cae-bc07-f3fc7128d380',Status:'Active',StartDate:'25/01/24',EndDate:'25/01/25'},
-    {customerId:'510-558-2285',policyId:'da330621-7678-4cae-bc07-f3fc7128d380',Status:'Active',StartDate:'25/01/24',EndDate:'25/01/25'}
+    {customerId:'510-558-2283',policyId:'da330621-7678-4cae-bc07-f3fc7128d381',Status:'Active',StartDate:'25/01/24',EndDate:'25/01/25'},
+    {customerId:'510-558-2284',policyId:'da330621-7678-4cae-bc07-f3fc7128d382',Status:'Active',StartDate:'25/01/24',EndDate:'25/01/25'},
+    {customerId:'510-558-2285',policyId:'da330621-7678-4cae-bc07-f3fc7128d383',Status:'Active',StartDate:'25/01/24',EndDate:'25/01/25'}
   ]
 
 
@@ -89,7 +89,8 @@ function App() {
                 <th scope="col">Status</th>
               </tr>
             </thead>
-            <Details/>
+            
+            <Transactions selectedPolicy={selectedPolicy} />
           </table>
         </div>
       

@@ -1,5 +1,5 @@
 import './index.css'
-function Policy ({data_policy,PolicyClicked},prop){
+function Policy ({data_policy,PolicyClicked}){
 
     
 
@@ -7,7 +7,6 @@ function Policy ({data_policy,PolicyClicked},prop){
     return(
         
         <div class="card " onClick={()=>PolicyClicked(data_policy.policyId)}  style={{width: "18rem"}}>
-        {console.log(prop.key)}
             <div class="card-body">
             <h5 class="card-title">Customer ID: {data_policy.customerId} </h5>
             <p class="card-text">Policy Id : {data_policy.policyId}</p>

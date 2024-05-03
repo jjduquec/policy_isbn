@@ -41,10 +41,10 @@ const axios = require('axios');
 
 */ 
 
-
+var formated_data=[]
 axios.get('http://localhost:3001/policies/api/v1/da330621-7678-4cae-bc07-f3fc7128d380/transactions')
     .then(function(response){
-        var formated_data=[]
+        
         const data=response.data; 
         /* Require: 
         Transaction ID
@@ -59,7 +59,7 @@ axios.get('http://localhost:3001/policies/api/v1/da330621-7678-4cae-bc07-f3fc712
        formated_data.push(temp_date.slice(0,temp_date.indexOf('T')))
        formated_data.push(data.status) 
 
-       console.log(formated_data)
+       
         
 
 
@@ -71,6 +71,7 @@ axios.get('http://localhost:3001/policies/api/v1/da330621-7678-4cae-bc07-f3fc712
         console.log(error)
     })
 
+    console.log(formated_data)
 
 
 
