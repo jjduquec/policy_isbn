@@ -9,10 +9,12 @@ function Transactions({selectedPolicy}){
     useEffect(()=>{
 
         if(selectedPolicy!=''){
-
-            //retrieve API information  
-            axios.get('http://localhost:3001/policies/api/v1/da330621-7678-4cae-bc07-f3fc7128d380/transactions')
+            //retrieve API information
+            var connection='http://localhost:3001/policies/api/v1/'+selectedPolicy+'/transactions'; 
+            
+            axios.get(connection)
                 .then((response)=>{
+                        setTransactions([]);
                         const transactions=response.data.transactions;
                         var formated_data=[];
                         transactions.map((transaction)=>{
@@ -31,7 +33,6 @@ function Transactions({selectedPolicy}){
                         //data formatted and ready to display 
                         setTransactions(formated_data); 
                         setRetrieved(true);
-
 
 
 

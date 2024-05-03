@@ -20,7 +20,7 @@ function App() {
   }
 
 
-/*
+
   useEffect(()=>{
     axios({
       url: "http://localhost:3001/policies/api/v1/policies",
@@ -48,18 +48,12 @@ function App() {
       },[setList]);
 
   });
-  */
+
 
   /*delete this before update main */  
 
  
 
-  let policies=[
-    {customerId:'510-558-2282',policyId:'da330621-7678-4cae-bc07-f3fc7128d380',Status:'Cancelled',StartDate:'25/01/24',EndDate:'25/01/25'},
-    {customerId:'510-558-2283',policyId:'da330621-7678-4cae-bc07-f3fc7128d381',Status:'Active',StartDate:'25/01/24',EndDate:'25/01/25'},
-    {customerId:'510-558-2284',policyId:'da330621-7678-4cae-bc07-f3fc7128d382',Status:'Active',StartDate:'25/01/24',EndDate:'25/01/25'},
-    {customerId:'510-558-2285',policyId:'da330621-7678-4cae-bc07-f3fc7128d383',Status:'Active',StartDate:'25/01/24',EndDate:'25/01/25'}
-  ]
 
 
  
@@ -70,7 +64,7 @@ function App() {
       <div class="col col-6 col-md-4" >
           
                 
-                {policies.map((temp_policy)=>(
+                {policies_list.map((temp_policy)=>(
                     <Policy key={temp_policy.customerId} data_policy={temp_policy} PolicyClicked={PolicyClicked} />
 
                     ))  
@@ -86,7 +80,7 @@ function App() {
                 <th scope="col">Transaction Id</th>
                 <th scope="col">Operation Type</th>
                 <th scope="col">Process Date</th>
-                <th scope="col">Status</th>
+                <th scope="col">Transaction Status</th>
               </tr>
             </thead>
             
