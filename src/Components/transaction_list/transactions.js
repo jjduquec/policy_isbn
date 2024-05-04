@@ -10,7 +10,7 @@ function Transactions({selectedPolicy}){
 
         if(selectedPolicy!=''){
             //retrieve API information
-            var connection='http://localhost:3001/policies/api/v1/'+selectedPolicy+'/transactions'; 
+            var connection='http://34.28.203.114/policies/api/v1/'+selectedPolicy+'/transactions'; 
             
             axios.get(connection)
                 .then((response)=>{

@@ -23,7 +23,7 @@ function App() {
 
   useEffect(()=>{
     axios({
-      url: "http://localhost:3001/policies/api/v1/policies",
+      url: "http://34.28.203.114/policies/api/v1/policies",
     })
       .then((response) => {
         var formated_data=[];
